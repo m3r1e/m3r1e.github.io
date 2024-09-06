@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styling.css" />
+    <script src="script.js"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Merle In der Rieden</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="archive.html">Archive</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="intro">
+          <h2 style="margin-bottom: 0.5cm">Bayesian Regret and VSE</h2>
+          <p style="margin-bottom: 0.5cm">
+            Bayesian Regret is a method that can be used to evaluate voting
+            systems. Utilities are assigned to every candidate for every voter
+            in the simulation, and these utilities are used to a) construct
+            voter profiles, and b) determine the total utility for every
+            candidate if they win the election. These utilities can be assigned
+            using spatial methods, wherein voters and candidates can be assigned
+            position vectors where each element is a numerical representation of
+            a person's stance on some issue, and utility is the Euclidean
+            distance between voters and candidates. A 'magic winner' is
+            determined, as some candidate whose position is such that the total
+            utility is a maximum. Elections are run for various voting methods,
+            and the utility is given by the winner; this number is then compared
+            to the magic utility, and the difference between the two is the
+            Bayesian Regret. Lots of elections (simulations) are run to find the
+            average Bayesian Regret per voting system. To make this more
+            informative, different voter behaviours can be involved.
+          </p>
+          <p style="margin-bottom: 0.5cm">
+            For example, complete voter honesty where voter profiles are
+            proportional to utility profiles, fully-strategic voting, one-sided
+            strategic, two-sided strategic, or a mix. VSE (voter satisfaction
+            efficiency) is slightly different to Bayesian regret: \[VSE(method)
+            = 1 - {BR(method) \over BR(random winner)}\]
+          </p>
+          <p style="margin-bottom: 0.5cm">
+            Warren Smith and Jameson Quinn did lots of work in making these
+            simulations. Their results are as follows (Smith's BR results, and
+            Quinn's VSE results):
+          </p>
+          <p style="margin-bottom: 0.5cm">
+            <img src="smith figure.png" alt="Smith's BR Results" />
+            <img
+              src="quinn figure.png"
+              alt="Quinn's VSE Results"
+              width="700"
+              height="450"
+            />
+          </p>
+          <p style="margin-bottom: 0.5cm">
+            Quinn's simulation is a bit more recent and more sophisticated than
+            Smith's; beyond more voting methods, and more voter behaviours, he
+            also includes random noise in the conversion from utility profile to
+            voter profile (because voters don't really know their exact
+            positions, or candidates exact positions, and may have other
+            biases). His utility generation method is also a bit more realistic.
+          </p>
+          <p style="margin-bottom: 0.5cm">
+            In doing non-trivial, I made a (very primitive) model to try and do
+            this better, and found some areas where I think the model could be
+            refined to be more informative:
+          </p>
+          <ul>
+            <li>
+              How many issues do voters actually take into account when making
+              decisions?
+            </li>
+            <li>
+              How should the position vector elements be generated? i.e.
+              randomly, normally (with what parameters?) Should these elements
+              be independent?
+            </li>
+            <li>
+              What voter behaviours are the most common / what proportions do
+              they occur in?
+            </li>
+            <li>
+              Should random noise be added by drawing randomly from some given
+              range, or using some distribution?
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <p>Merle In der Rieden</p>
+    </footer>
+  </body>
+</html>
