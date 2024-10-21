@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styling.css" />
+    <script src="script.js"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Merle In der Rieden</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="archive.html">Archive</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="intro">
+          <h2 style="margin-bottom: 0.5cm">Yee Pictures</h2>
+          <p style="margin-bottom: 0.5cm">
+            Yee pictures, developed first by Ka-Ping Yee, are another method of evaluating various voting systems. Warren Smith also developed a new programme since his first model called IEVS (infinitely extendible voting simulator) which uses Yee Pictures to examine single winner electoral methods.
+          </p>
+          <p style="margin-bottom: 0.5cm">
+            There are n candidates on a two dimensional Euclidean plane, where coordinates represent political opinion and Euclidean distance between points represents the difference in opinion between two points. Candidate positions are fixed on this plane, and voter opinions are randomly distributed on the plane using a two-dimensional Gaussian distribution with variance σ. The candidates are distinctly coloured-in circles on the diagram. All other points are coloured according to the winner of the election where election method
+is given if the centre of public opinion were at that point. The variables for the image to
+change are coordinates of the candidates, electoral method, and σ.
+          </p>
+          <p style="margin-bottom: 0.5cm">
+            Below, candidates are positioned at vertices of an equilateral triangle. All electoral methods return an optimal result, which is a Voronoi diagram.
+          </p>
+          <p style="margin-bottom: 0.5cm">
+            <img src="smith figure.png" alt="Smith's BR Results" />
+            <img
+              src="quinn figure.png"
+              alt="Quinn's VSE Results"
+              width="700"
+              height="450"
+            />
+          </p>
+          <p style="margin-bottom: 0.5cm">
+            Quinn's simulation is a bit more recent and more sophisticated than
+            Smith's; beyond more voting methods, and more voter behaviours, he
+            also includes random noise in the conversion from utility profile to
+            voter profile (because voters don't really know their exact
+            positions, or candidates exact positions, and may have other
+            biases). His utility generation method is also a bit more realistic.
+          </p>
+          <p style="margin-bottom: 0.5cm">
+            In doing non-trivial, I made a (very primitive) model to try and do
+            this better, and found some areas where I think the model could be
+            refined to be more informative:
+          </p>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <p>Merle In der Rieden</p>
+    </footer>
+  </body>
+</html>
