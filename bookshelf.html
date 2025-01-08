@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+      }
+
+      .bookshelf {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr); 
+        gap: 4px; 
+        width: 50%;
+        height: 80%;
+        background: #997950;
+        border: 6px solid #48260d;
+        box-sizing: border-box;
+        padding: 4px;
+      }
+
+      .shelf {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end; 
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        border-bottom: 6px solid #48260d;
+        height: 100%; 
+      }
+
+      .book {
+        display: flex;
+        align-items: flex-end; 
+        height: 100%; 
+        cursor: grab;
+        box-sizing: border-box;
+      }
+
+      .book:active {
+        cursor: grabbing;
+      }
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 style="text-align: center; margin-bottom: 10px">
+          Bookshelf - work in progress...
+        </h1>
+      </header>
+    <div class="bookshelf" id="bookshelf">
+      <div class="shelf" data-shelf="1">
+        <div class="book" data-id="1" data-width="50">
+          <img
+            src="spines/thebelljar.jpg"
+            alt="The Bell Jar"
+            style="width: 7px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="2" data-width="50">
+          <img
+            src="spines/neverletmego.jpg"
+            alt="Never Let Me Go"
+            style="width: 9.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="3" data-width="50">
+          <img
+            src="spines/the_bread_the_devil_knead.jpg"
+            alt="The Bread The Devil Knead"
+            style="width: 9.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="4" data-width="50">
+          <img
+            src="spines/panenka.jpg"
+            alt="Panenka"
+            style="width: 7px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="5" data-width="50">
+          <img
+            src="spines/amsterdam.jpg"
+            alt="Amsterdam"
+            style="width: 6.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="6" data-width="50">
+          <img
+            src="spines/the_cement_garden.jpg"
+            alt="The Cement Garden"
+            style="width: 4px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="7" data-width="50">
+          <img
+            src="spines/the_lost_daughter.jpg"
+            alt="The Lost Daughter"
+            style="width: 4.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="8" data-width="50">
+          <img
+            src="spines/the_unbearable_lightness_of_being.jpg"
+            alt="The Unbearable Lightness of Being"
+            style="width: 9.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="9" data-width="50">
+          <img
+            src="spines/second_place.jpg"
+            alt="Second Place"
+            style="width: 7.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="10" data-width="50">
+          <img
+            src="spines/outline.jpg"
+            alt="Outline"
+            style="width: 8.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="11" data-width="50">
+          <img
+            src="spines/the_ballad_of_songbirds_and_snakes.jpg"
+            alt="The Ballad of Songbirds and Snakes"
+            style="width: 15.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="12" data-width="50">
+          <img
+            src="spines/the_handmaids_tale.jpg"
+            alt="The Handmaid's Tale"
+            style="width: 10px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="13" data-width="50">
+          <img
+            src="spines/the_testaments.jpg"
+            alt="The Testaments"
+            style="width: 16px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="14" data-width="50">
+          <img
+            src="spines/to_kill_a_mockingbird.jpg"
+            alt="To Kill a Mockingbird"
+            style="width: 9px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="15" data-width="50">
+          <img
+            src="spines/all_passion_spent.jpg"
+            alt="All Passion Spent"
+            style="width: 10px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="16" data-width="50">
+          <img
+            src="spines/1Q84.jpg"
+            alt="1Q84"
+            style="width: 28px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="17" data-width="50">
+          <img
+            src="spines/macbeth.jpg"
+            alt="Macbeth"
+            style="width: 8px; height: 114px"
+          />
+        </div>
+        <div class="book" data-id="18" data-width="50">
+          <img
+            src="spines/the_hunger_games.jpg"
+            alt="The Hunger Games"
+            style="width: 13px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="19" data-width="50">
+          <img
+            src="spines/catching_fire.jpg"
+            alt="Catching Fire"
+            style="width: 13px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="20" data-width="50">
+          <img
+            src="spines/mockingjay.jpg"
+            alt="Mockingjay"
+            style="width: 13px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="21" data-width="50">
+          <img
+            src="spines/orlando.jpg"
+            alt="Orlando"
+            style="width: 9px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="22" data-width="50">
+          <img
+            src="spines/to_the_lighthouse.jpg"
+            alt="To the Lighthouse"
+            style="width: 7.5px; height: 88px"
+          />
+        </div>
+        <div class="book" data-id="23" data-width="50">
+          <img
+            src="spines/the_waves.jpg"
+            alt="The Waves"
+            style="width: 7.5px; height: 88px"
+          />
+        </div>
+        <div class="book" data-id="24" data-width="50">
+          <img
+            src="spines/mrs_dalloway.jpg"
+            alt="Mrs Dalloway"
+            style="width: 6px; height: 88px"
+          />
+        </div>
+        <div class="book" data-id="25" data-width="50">
+          <img
+            src="spines/olivia.jpg"
+            alt="Olivia"
+            style="width: 3.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="26" data-width="50">
+          <img
+            src="spines/jacob's_room.jpg"
+            alt="Jacob's Room"
+            style="width: 7px; height: 93px"
+          />
+        </div>
+        <div class="book" data-id="27" data-width="50">
+          <img
+            src="spines/1984.jpg"
+            alt="1984"
+            style="width: 11.5px; height: 88px"
+          />
+        </div>
+        <div class="book" data-id="28" data-width="50">
+          <img
+            src="spines/I_who_have_never_known_men.jpg"
+            alt="I Who Have Never Known Men"
+            style="width: 5px; height: 88px"
+          />
+        </div>
+        <div class="book" data-id="29" data-width="50">
+          <img
+            src="spines/a_girl_is_a_half_formed_thing.jpg"
+            alt="A Girl is a Half Formed Thing"
+            style="width: 7px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="30" data-width="50">
+          <img
+            src="spines/a_room_of_one's_own.jpg"
+            alt="A Room of One's Own"
+            style="width: 4px; height: 90px"
+          />
+        </div>
+      </div>
+      <div class="shelf" data-shelf="2">
+        <div class="book" data-id="31" data-width="50">
+          <img
+            src="spines/homegoing.jpg"
+            alt="Homegoing"
+            style="width: 15px; height: 119.5px"
+          />
+        </div>
+        <div class="book" data-id="32" data-width="50">
+          <img
+            src="spines/all_the_lovers_in_the_night.jpg"
+            alt="All the lovers in the night"
+            style="width: 4.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="33" data-width="50">
+          <img
+            src="spines/plath_poems.jpg"
+            alt="Plath Poems"
+            style="width: 4px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="34" data-width="50">
+          <img
+            src="spines/oryx_and_crake.jpg"
+            alt="Oryx and Crake"
+            style="width: 13px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="35" data-width="50">
+          <img
+            src="spines/the_year_of_the_flood.jpg"
+            alt="The Year of the Flood"
+            style="width: 16.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="36" data-width="50">
+          <img
+            src="spines/maddaddam.jpg"
+            alt="Maddaddam"
+            style="width: 15px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="37" data-width="50">
+          <img
+            src="spines/gone_girl.jpg"
+            alt="Gone Girl"
+            style="width: 15px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="38" data-width="50">
+          <img
+            src="spines/milk_fed.jpg"
+            alt="Milk Fed"
+            style="width: 9.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="39" data-width="50">
+          <img
+            src="spines/donne_poetry.jpg"
+            alt="Donne Poetry"
+            style="width: 5.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="40" data-width="50">
+          <img
+            src="spines/transcendent_kingdom.jpg"
+            alt="Transcendent Kingdom"
+            style="width: 7.5px; height: 99px"
+          />
+        </div>
+        <div class="book" data-id="41" data-width="50">
+          <img
+            src="spines/carmilla.jpg"
+            alt="Carmilla"
+            style="width: 7.5px; height: 102.5px"
+          />
+        </div>
+        <div class="book" data-id="42" data-width="50">
+          <img
+            src="spines/the_colour_purple.jpg"
+            alt="The Colour Purple"
+            style="width: 10px; height: 106px"
+          />
+        </div>
+      </div>
+      <div class="shelf" data-shelf="3"></div>
+      <div class="shelf" data-shelf="4"></div>
+    </div>
+    </div>
+
+    <script>
+      const bookshelf = document.getElementById("bookshelf");
+      const shelves = Array.from(bookshelf.getElementsByClassName("shelf"));
+      let draggedBook = null;
+      function loadPositions() {
+        const savedOrder = JSON.parse(localStorage.getItem("bookOrder")) || {};
+        shelves.forEach((shelf) => {
+          const shelfId = shelf.dataset.shelf;
+          const booksInShelf = savedOrder[shelfId] || [];
+
+          booksInShelf.forEach((id) => {
+            const book = document.querySelector(`.book[data-id="${id}"]`);
+            if (book) {
+              shelf.appendChild(book);
+              book.style.alignSelf = "flex-end"; 
+            }
+          });
+        });
+      }
+
+      function savePositions() {
+        const order = {};
+        shelves.forEach((shelf) => {
+          const shelfId = shelf.dataset.shelf;
+          const bookIds = Array.from(shelf.children).map(
+            (book) => book.dataset.id
+          );
+          order[shelfId] = bookIds;
+        });
+        localStorage.setItem("bookOrder", JSON.stringify(order));
+      }
+
+      shelves.forEach((shelf) => {
+        shelf.addEventListener("dragover", (e) => {
+          e.preventDefault();
+
+          const afterElement = getDragAfterElement(shelf, e.clientX);
+          if (draggedBook) {
+            draggedBook.style.alignSelf = "flex-end"; 
+            if (afterElement == null) {
+              shelf.appendChild(draggedBook);
+            } else {
+              shelf.insertBefore(draggedBook, afterElement);
+            }
+          }
+        });
+
+        shelf.addEventListener("drop", () => {
+          if (draggedBook) {
+            draggedBook.style.alignSelf = "flex-end"; 
+          }
+          savePositions(); 
+        });
+      });
+
+      document.querySelectorAll(".book").forEach((book) => {
+        book.draggable = true;
+
+        book.addEventListener("dragstart", () => {
+          draggedBook = book;
+          book.style.alignSelf = "flex-end"; 
+          setTimeout(() => {
+            book.style.display = "none"; 
+          }, 0);
+        });
+
+        book.addEventListener("dragend", () => {
+          book.style.display = "block"; 
+          book.style.alignSelf = "flex-end"; 
+          draggedBook = null; 
+          savePositions(); 
+        });
+      });
+
+      function getDragAfterElement(shelf, x) {
+        const draggableElements = [
+          ...shelf.querySelectorAll('.book:not([style*="display: none"])'),
+        ];
+        return draggableElements.reduce(
+          (closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = x - box.left - box.width / 2;
+            if (offset < 0 && offset > closest.offset) {
+              return { offset: offset, element: child };
+            } else {
+              return closest;
+            }
+          },
+          { offset: Number.NEGATIVE_INFINITY }
+        ).element;
+      }
+      loadPositions();
+    </script>
+  </body>
+</html>
